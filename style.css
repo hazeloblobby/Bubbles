@@ -1,0 +1,185 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: #fff3f8;
+    font-family: 'Baloo 2', cursive;
+}
+
+/* Main white box */
+.container {
+    text-align: center;
+    background: #ffffff;
+
+    padding: 45px 55px;
+    border-radius: 30px;
+
+    box-shadow: 0 12px 35px rgba(200, 120, 160, 0.15);
+
+    animation: popIn 0.7s ease-out;
+}
+
+/* Heading */
+h1 {
+    font-size: 42px;
+    color: #d989ae;
+
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+/* Text */
+p {
+    font-size: 20px;
+    color: #9c7185;
+}
+
+/* Name box */
+input {
+    width: 250px;
+
+    padding: 13px 18px;
+
+    border: 2px solid #f3c4d9;
+    border-radius: 18px;
+
+    outline: none;
+
+    font-family: 'Baloo 2', cursive;
+    font-size: 18px;
+
+    text-align: center;
+
+    transition: 0.2s;
+}
+
+/* When you click the name box */
+input:focus {
+    transform: scale(1.04);
+    border-color: #df91b5;
+}
+
+/* Button */
+button {
+    display: block;
+
+    margin: 20px auto 0;
+
+    padding: 12px 28px;
+
+    border: none;
+    border-radius: 20px;
+
+    background: #f3b2ce;
+    color: white;
+
+    font-family: 'Baloo 2', cursive;
+    font-size: 18px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: transform 0.2s ease;
+}
+
+/* Button gets bigger when you hover */
+button:hover {
+    transform: scale(1.08);
+}
+
+/* Button squishes when clicked */
+button:active {
+    transform: scale(0.95);
+}
+
+/* Main box popping onto the screen */
+@keyframes popIn {
+
+    0% {
+        opacity: 0;
+        transform: scale(0.7) translateY(30px);
+    }
+
+    70% {
+        transform: scale(1.05) translateY(-5px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+
+/* Result letter/card */
+
+#resultBox {
+    display: none;
+
+    width: 320px;
+    margin: 30px auto 0;
+
+    padding: 25px;
+
+    background: #fff8fc;
+    border: 3px solid #f3c4d9;
+    border-radius: 25px;
+
+    box-shadow: 0 10px 30px rgba(200, 120, 160, 0.18);
+
+    transform-origin: top center;
+}
+
+/* When the result appears */
+#resultBox.show {
+    display: block;
+    animation: letterOpen 0.7s ease-out;
+}
+
+#resultTitle {
+    margin: 0 0 8px;
+
+    color: #d989ae;
+    font-size: 27px;
+}
+
+#result {
+    margin: 0;
+
+    color: #9c7185;
+    font-size: 21px;
+}
+
+/* Letter opening animation */
+
+@keyframes letterOpen {
+
+    0% {
+        opacity: 0;
+        transform: scaleY(0) scaleX(0.8);
+    }
+
+    50% {
+        opacity: 1;
+        transform: scaleY(1.08) scaleX(1.03);
+    }
+
+    75% {
+        transform: scaleY(0.96) scaleX(0.98);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scaleY(1) scaleX(1);
+    }
+
+}
